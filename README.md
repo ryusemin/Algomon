@@ -80,7 +80,7 @@ week1 / only-juun / 4문제
 
 <br>
 
-### 🧩 문제 신청 [`✈ 문제 등록하기`](https://github.com/S0HYUNN/Algomon/issues/new?template=problem_request.md)
+### 🧩 문제 신청 [`✈ 문제 등록하기`](https://github.com/S0HYUNN/Algomon/issues/new?template=custim_request.md)
 
 
 <br><br>
