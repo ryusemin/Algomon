@@ -4,7 +4,6 @@
 > 🎯 **목표: 하루에 15점 이상 문제 풀기!**
 
 
-***
 <br><br>
 
 ## 🫧 점수 시스템
@@ -18,7 +17,6 @@
 | 5    | 1점    | 6점  | 11점 |
 
 <br><br>
-***
 
 
 ## 🫧 Commit Convention
@@ -63,9 +61,6 @@
 
 <br><br>
 
-***
-
-<br><br>
 
 ## 🫧 PR 규칙
 
@@ -76,11 +71,13 @@ week1 / only-juun / 4문제
 
 - **코멘트**: 자유  
    어려웠던 점, 풀이 참고자료, 리팩토링 포인트 등
-
+  
+<br><br>
 ***
 <br><br>
 
-[🧩 문제 신청 (✈ 문제 등록하기)] (https://github.com/S0HYUNN/Algomon/issues)
+🧩 문제 신청  
+➡️ [문제 등록하기](https://github.com/S0HYUNN/Algomon/issues)
 
 <br><br>
 
