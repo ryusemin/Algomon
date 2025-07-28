@@ -73,7 +73,7 @@ week1 / only-juun / 4문제
    어려웠던 점, 풀이 참고자료, 리팩토링 포인트 등
   
 <br>
-***
+---
 <br>
 
 ### 🧩 문제 신청 [`✈ 문제 등록하기`](https://github.com/S0HYUNN/Algomon/issues)
