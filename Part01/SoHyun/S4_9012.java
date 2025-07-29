@@ -1,14 +1,14 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
+import java.io.*;
 
 public class S4_9012 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int T = sc.nextInt();
+        int T = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < T; i++) {
-            String s = sc.next();
+            String s = br.readLine();
             Stack<Character> stack = new Stack<>();
 
             boolean isValid = true;
