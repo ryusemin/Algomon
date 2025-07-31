@@ -5,7 +5,7 @@
 > 알고리즘 코딩 테스트 스터디  
 > 🎯 **목표: 하루에 15점 이상 문제 풀기!**
 
-### 💌[Algomon Notion](https://www.notion.so/23e60c507e3c80daa94ec3bb7c5c9ea0?source=copy_link)
+### 💌 [Algomon Notion](https://www.notion.so/23e60c507e3c80daa94ec3bb7c5c9ea0?source=copy_link)
 
 <br><br>
 
