@@ -6,33 +6,47 @@ class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String[] arr = br.readLine().split("");
-        List<String> list = new LinkedList<>(Arrays.asList(arr));
-        int M = Integer.parseInt(br.readLine());
+        Deque<String> stack1 = new ArrayDeque<>();
+        Deque<String> stack2 = new ArrayDeque<>();
 
-        int cursor = list.size();
+
+        for(String s : arr){
+            stack1.push(s);
+        }
+
+        int M = Integer.parseInt(br.readLine());
 
         for(int tc = 0; tc < M; tc++){
             String[] command = br.readLine().split(" ");
             String cmd = command[0];
             switch (cmd){
                 case "L":
-                    cursor = cursor <= 0? 0 : cursor - 1;
+                    if(!stack1.isEmpty()) stack2.push(stack1.pop());
                     break;
                 case "D":
-                    cursor = cursor >= list.size()? list.size() : cursor + 1;
+                    if(!stack2.isEmpty()) stack1.push(stack2.pop());
                     break;
                 case "B":
-                    if(cursor == 0) break;
-                    list.remove(--cursor);
+                    if(!stack1.isEmpty()) stack1.pop();
                     break;
                 case "P":
-                    list.add(cursor++, command[1]);
+                    stack1.push(command[1]);
                     break;
             }
-        }
-        for(String s : list){
-            System.out.print(s);
+
         }
 
+        StringBuilder sb = new StringBuilder();
+
+        for(String s : stack1){
+            sb.append(s);
+        }
+        sb.reverse();
+
+        for(String s : stack2){
+            sb.append(s);
+        }
+
+        System.out.println(sb);
     }
 }
