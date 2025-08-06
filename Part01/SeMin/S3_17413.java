@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class Main {
+public class S3_17413 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
