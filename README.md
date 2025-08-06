@@ -36,10 +36,10 @@
 ## 🫧 Commit Convention
 
 - **형식**:  
-  `commit 태그: [플랫폼]_문제번호_문제이름`
+  `[플랫폼]_문제번호_문제이름`
 
 - **예시**:
-  feat: [BOJ]_1000_A+B
+  [BOJ]_1000_A+B
   description: (option)
 
 - **옵션 포함 커맨드 예시**:
