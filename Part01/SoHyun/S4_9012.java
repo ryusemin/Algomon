@@ -18,9 +18,11 @@ public class S4_9012 {
 
                 if (c == '(') {
                     stack.push(c);
-                } else if (stack.empty()) {
+                }
+                else if (stack.empty()) {
                     isValid = false;
-                } else {
+                }
+                else {
                     stack.pop();
                 }
             }
