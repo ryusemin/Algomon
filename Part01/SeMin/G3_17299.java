@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class G4_17298 {
+class G3_17299 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -10,15 +10,18 @@ class G4_17298 {
         int[] arr = new int[ss.length];
 
         Deque<Integer> stack = new ArrayDeque<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         for(int i =0; i< ss.length; i++){
-            arr[i] = Integer.parseInt(ss[i]);
+            int num = Integer.parseInt(ss[i]);
+            arr[i] = num;
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
 
 
         for(int i =0; i< arr.length; i++){
-            while(!stack.isEmpty() && arr[stack.peek()] < arr[i]) {
-                    arr[stack.pop()] = arr[i];
+            while(!stack.isEmpty() && map.get(arr[stack.peek()]) < map.get(arr[i])) {
+                arr[stack.pop()] = arr[i];
             }
             stack.push(i);
         }
