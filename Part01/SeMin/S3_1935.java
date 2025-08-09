@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class S3_1935 {
+S3_1935 {
     public static void main(String[] args) throws IOException {
         char[] alphabet = {
                 'A', 'B', 'C', 'D', 'E', 'F', 'G',

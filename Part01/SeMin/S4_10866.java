@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class S4_10866 {
+class S4_10866 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Deque deque = new Deque();
