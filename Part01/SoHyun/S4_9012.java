@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class S4_9012 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int T = Integer.parseInt(br.readLine());
@@ -18,9 +18,11 @@ public class S4_9012 {
 
                 if (c == '(') {
                     stack.push(c);
-                } else if (stack.empty()) {
+                }
+                else if (stack.empty()) {
                     isValid = false;
-                } else {
+                }
+                else {
                     stack.pop();
                 }
             }
