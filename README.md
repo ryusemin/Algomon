@@ -43,7 +43,7 @@
   description: (option)
 
 - **옵션 포함 커맨드 예시**:
-  git commit -m "[BOJ]_1000_A+B" -m "(풀이 시간: 15분 / 수학 기본)"
+  git commit -m "[BOJ]_1000_A+B" "(풀이 시간: 15분 / 수학 기본)"
 
 <br>
 
@@ -80,7 +80,7 @@
 
 - **PR 제목**: `주차 / 이름 / 푼 문제 수`  
 예시:  
-week1 / only-juun / 4문제
+Part1 / only-juun / 4문제
 
 
 - **코멘트**: 자유  
