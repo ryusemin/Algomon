@@ -95,6 +95,6 @@ Part1 / only-juun / 4문제
 ### 🧩 문제 신청 [`✈ 문제 등록하기`](https://github.com/S0HYUNN/Algomon/issues/new?template=custom-issue-template.md)
 
 
-<br><br>
+<br>
 
 함께 성장하는 ✨ **Algomon** ✨ 스터디를 응원합니다!
