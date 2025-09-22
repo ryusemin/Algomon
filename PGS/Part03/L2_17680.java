@@ -1,31 +1,42 @@
+import java.util.*;
+
 class Solution {
     public int solution(int cacheSize, String[] cities) {
-        if (cacheSize == 0) {
-            return cities.length * 5;
-        }
-
         int answer = 0;
-        Queue<String> cache = new LinkedList<>(); 
-
-        for (int i = 0; i < cities.length; i++) {
-            String city = cities[i].toUpperCase();
-
-
-            if (cache.remove(city)) {
-                cache.add(city); 
-                answer += 1; 
-            } else {
-    
-                if (cache.size() == cacheSize) {
-                    cache.poll();
-                    cache.add(city); 
-                } else {
-                    cache.add(city); 
+        
+        Queue<String> q = new LinkedList<>();
+        
+        for(String city : cities){
+            city = city.toLowerCase();
+            boolean flag = false;
+            
+            for(String s : q){
+                s = s.toLowerCase();
+                if(s.equals(city)) {
+                    answer += 1;
+                    flag = true;
+                    break;
                 }
-                answer += 5; 
             }
-        }
+            
+            if(!flag) answer += 5;
+            
+            
+            if(q.contains(city)){
+                q.remove(city);
+                q.offer(city);
+                continue;
+            }
 
+            if(cacheSize == 0) continue;
+            else if(q.size() == cacheSize){
+                q.poll();
+            }
+            q.offer(city);
+            
+        }
+        
+        
         return answer;
     }
 }
