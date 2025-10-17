@@ -2,88 +2,75 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int INT_MAX = Integer.MAX_VALUE;
-    public static final int MAX_K = 10;
-    public static final int MAX_N = 100000;
-    
-    public static int n, m, k;
-    
-    public static ArrayList<Integer>[] edges = new ArrayList[MAX_N];
-    public static int[] startPoints = new int[MAX_K];
-    
-    public static boolean[][] visited = new boolean[MAX_K][MAX_N];
-    public static int[][] step = new int[MAX_K][MAX_N];
-    
-    public static int ans = INT_MAX;
-    
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+        String[] nmk = br.readLine().split(" ");
 
-    public static void bfs(int i) {
-        int sNum = startPoints[i];
-    
-        for(int j = 0; j < n; j++)
-            step[i][j] = -1;
-    
+        int n = Integer.parseInt(nmk[0]);
+        int m = Integer.parseInt(nmk[1]);
+        int k = Integer.parseInt(nmk[2]);
+
+        List<Integer>[] edges = new ArrayList[n];
+        for (int i = 0; i < n; i++) {
+            edges[i] = new ArrayList<>();
+        }
+
+        for (int i = 0; i < m; i++) {
+            String[] edge = br.readLine().split(" ");
+            int x = Integer.parseInt(edge[0]) - 1;
+            int y = Integer.parseInt(edge[1]) - 1;
+            edges[x].add(y);
+        }
+
+        int[] startPoints = new int[k];
+
+        String[] sp = br.readLine().split(" ");
+        for (int i = 0; i < k; i++) {
+            startPoints[i] = Integer.parseInt(sp[i]) - 1;
+        }
+
+        int[][] step = new int[k][n];
+        boolean[][] visited = new boolean[k][n];
+
         Queue<Integer> q = new LinkedList<>();
-        visited[i][sNum] = true;
-        step[i][sNum] = 0;
-        q.add(sNum);
-    
-        while(!q.isEmpty()) {
-            int x = q.poll();
-            for(int j = 0; j < edges[x].size(); j++) {
-                int y = edges[x].get(j);
-    
-                if(!visited[i][y]) {
-                    visited[i][y] = true;
-                    step[i][y] = step[i][x] + 1;
-                    q.add(y);
+        for(int i = 0; i < k; i++){
+            int sNum = startPoints[i];
+            q.offer(sNum);
+            visited[i][sNum] = true;
+
+            while(!q.isEmpty()){
+                int x = q.poll();
+                List<Integer> list = edges[x];
+                for(int y :list){
+                    if(!visited[i][y]){
+                        visited[i][y] = true;
+                        step[i][y] = step[i][x] + 1;
+                        q.offer(y); 
+                    }
                 }
             }
         }
-    }
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-        
-        String[] nmk = br.readLine().split(" ");
-        n = Integer.parseInt(nmk[0]);
-        m = Integer.parseInt(nmk[1]);
-        k = Integer.parseInt(nmk[2]);
-        
-        for(int i = 0; i < n; i++)
-            edges[i] = new ArrayList<>();
-        
-        for(int i = 0; i < m; i++) {
-            String[] edge = br.readLine().split(" ");
-            int x = Integer.parseInt(edge[0]);
-            int y = Integer.parseInt(edge[1]);
-            x--; y--;
-            edges[x].add(y);
-        }
-        String[] sp = br.readLine().split(" ");
-        for(int i = 0; i < k; i++) {
-            startPoints[i] = Integer.parseInt(sp[i]) - 1;
-        }
-        
-        for(int i = 0; i < k; i++)
-            bfs(i);
-        
-        for(int i = 0; i < n; i++) {
-            boolean impossible = false;
-            int maxT = -1;
-            for(int j = 0; j < k; j++) {
-                if(!visited[j][i])  
-                    impossible = true;
-                
-                maxT = Math.max(maxT, step[j][i]);
+        int answer = Integer.MAX_VALUE;
+        for(int i = 0; i < n; i++){
+            boolean check = false;
+            int max = -1;
+            for(int j = 0; j < k; j++){
+                if(!visited[j][i]){
+                    check = true;
+                }
+                max = Math.max(max, step[j][i]);
             }
-            if(!impossible)
-                ans = Math.min(ans, maxT);
+            if(!check)
+                answer = Math.min(answer, max);
         }
 
-        if(ans == INT_MAX)
-            ans = -1;
+        if(answer == Integer.MAX_VALUE){
+            answer = -1;
+        }
         
-        System.out.print(ans);
+        System.out.println(answer);
+
+
     }
 }
