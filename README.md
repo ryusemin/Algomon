@@ -4,6 +4,8 @@
 
 > 알고리즘 코딩 테스트 스터디  
 > 🎯 **목표: 하루에 15점 이상 문제 풀기!**
+> 
+> **[개념 참고 링크](https://blog.encrypted.gg/category/%EA%B0%95%EC%A2%8C/%EC%8B%A4%EC%A0%84%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)**
 
 ### 💌 [Algomon Notion](https://www.notion.so/23e60c507e3c80daa94ec3bb7c5c9ea0?source=copy_link)
 
