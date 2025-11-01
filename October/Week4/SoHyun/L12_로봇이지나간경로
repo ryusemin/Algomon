@@ -1,0 +1,56 @@
+H, W = map(int, input().split())
+D = [input() for _ in range(H)]
+
+dir = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+
+def is_in_path(i, j):
+    return 0 <= i < H and 0 <= j < W and D[i][j] == '#'
+
+si, sj, direction = -1, -1, -1
+
+for i in range(H):
+    for j in range(W):
+        if not is_in_path(i, j):
+            continue
+
+        cnt, dirIdx = 0, -1
+        for d in range(4):
+            ni, nj = i + dir[d][0], j + dir[d][1]
+            if is_in_path(ni, nj):
+                cnt += 1
+                dirIdx = d
+
+        if cnt == 1:
+            si, sj, direction = i, j, dirIdx
+
+print(si+1, sj+1)
+print("^>v<"[direction])
+
+v = [[0 for _ in range(W)] for _ in range(H)]
+commands = ""
+
+while True:
+    cnt, target_direction = 0, -1
+    for d in range(4):
+        ni, nj = si + dir[d][0], sj + dir[d][1]
+        if is_in_path(ni, nj) and not v[ni][nj]:
+            cnt += 1
+            target_direction = d
+
+    if cnt == 0:
+        break
+
+    diff = (target_direction - direction + 4) % 4
+
+    if diff == 1:
+        commands += 'R'
+    elif diff == 3:
+        commands += 'L'
+    direction = target_direction
+
+    commands += 'A'
+    for rep in range(2):
+        si, sj = si + dir[direction][0], sj + dir[direction][1]
+        v[si][sj] = 1
+
+print(commands)
