@@ -19,7 +19,9 @@ answer = 0
 for i in range(m_idx+1):
     cur = max(cur, p[i])
     answer += cur
+    
 cur = 0
+
 for i in range(1000, m_idx, -1):
     cur = max(cur, p[i])
     answer += cur
