@@ -12,8 +12,8 @@ public class Main {
 
         for (int i = 0; i < N; i++) {
             String[] s = br.readLine().split(" ");
-            int L = Integer.parseInt(st.nextToken());
-            int H = Integer.parseInt(st.nextToken());
+            int L = Integer.parseInt(s[0]);
+            int H = Integer.parseInt(s[1]);
 
             list.add(new Info(L, H));
         }
